@@ -60,4 +60,8 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
+          AZURE_OPENAI_API_DEPLOYMENT_ID: ${{ secrets.AZURE_OPENAI_API_DEPLOYMENT_ID }}
+          AZURE_OPENAI_API_ENDPOINT: ${{ secrets.AZURE_OPENAI_API_ENDPOINT }}
+          AZURE_OPENAI_API_INSTANCE_NAME: ${{ secrets.AZURE_OPENAI_API_INSTANCE_NAME }}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           action: "close"
