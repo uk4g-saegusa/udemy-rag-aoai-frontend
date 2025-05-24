@@ -32,11 +32,12 @@ jobs:
                const coredemo = require('@actions/core')
                return await coredemo.getIDToken()
            result-encoding: string
-           AZURE_OPENAI_API_DEPLOYMENT_ID: ${{ secrets.AZURE_OPENAI_API_DEPLOYMENT_ID }}
-           AZURE_OPENAI_API_ENDPOINT: ${{ secrets.AZURE_OPENAI_API_ENDPOINT }}
-           AZURE_OPENAI_API_INSTANCE_NAME: ${{ secrets.AZURE_OPENAI_API_INSTANCE_NAME }}
-           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       - name: Build And Deploy
+        env: 
+          AZURE_OPENAI_API_DEPLOYMENT_ID: ${{ secrets.AZURE_OPENAI_API_DEPLOYMENT_ID }}
+          AZURE_OPENAI_API_ENDPOINT: ${{ secrets.AZURE_OPENAI_API_ENDPOINT }}
+          AZURE_OPENAI_API_INSTANCE_NAME: ${{ secrets.AZURE_OPENAI_API_INSTANCE_NAME }}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
